@@ -82,9 +82,6 @@ function IssueList() {
             <strong>Priority:</strong> {ticket.priority}
           </p>
           <p>
-            <strong>Due:</strong> {ticket.due}
-          </p>
-          <p>
             <strong>Status:</strong>{" "}
             <span
               className={`status-badge ${
