@@ -20,7 +20,7 @@ function IssueTable() {
     e.preventDefault();
 
     try {
-      await axios.post("http://localhost:5000/api/tickets", {
+      await axios.post("http://localhost:5000/api/Issues", {
         title: form.title,
         description: form.description,
         priority: form.priority,

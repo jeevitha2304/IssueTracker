@@ -7,7 +7,7 @@ function IssueList() {
   // Fetch tickets
   const fetchTickets = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/tickets");
+      const res = await axios.get("http://localhost:5000/api/Issues");
       setTickets(res.data);
     } catch (error) {
       console.error("Error fetching tickets:", error);
@@ -17,7 +17,7 @@ function IssueList() {
   // Delete ticket
   const deleteTicket = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/api/tickets/${id}`);
+      await axios.delete(`http://localhost:5000/api/Issues/${id}`);
 
       setTickets((prevTickets) =>
         prevTickets.filter((ticket) => ticket._id !== id)
@@ -33,7 +33,7 @@ function IssueList() {
   // Update status
   const updateStatus = async (id, newStatus) => {
     try {
-      await axios.put(`http://localhost:5000/api/tickets/${id}`, {
+      await axios.put(`http://localhost:5000/api/Issues/${id}`, {
         status: newStatus,
       });
 
@@ -81,7 +81,9 @@ function IssueList() {
           <p>
             <strong>Priority:</strong> {ticket.priority}
           </p>
-
+          <p>
+            <strong>Due:</strong> {ticket.due}
+          </p>
           <p>
             <strong>Status:</strong>{" "}
             <span
