@@ -1,12 +1,14 @@
 import React from "react";
-import IssueList from "./Components/IssueList";
+import "./App.css";
 import IssueTable from "./Components/IssueTable";
+import IssueList from "./Components/IssueList";
 
 function App() {
   return (
     <div className="App">
+       <IssueTable/>
       <IssueList/>
-      <IssueTable/>
+      
     </div>
   );
 }

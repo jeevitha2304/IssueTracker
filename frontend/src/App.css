@@ -1,38 +1,199 @@
-.App {
-  text-align: center;
+/* ======================
+GLOBAL
+====================== */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+font-family:'Segoe UI',sans-serif;
+background:#eef2f7;
+padding:40px 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Main App Container */
+.App{
+width:1100px;
+margin:auto;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+/* Dashboard Card */
+.main-layout{
+display:grid;
+grid-template-columns:380px 1fr;
+gap:20px;
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-.App-link {
-  color: #61dafb;
+/* ======================
+CREATE ISSUE PANEL
+====================== */
+
+.issue-form-container{
+background:#1f2937;
+padding:25px;
+border-radius:15px;
+color:white;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.issue-form-container h2{
+text-align:center;
+margin-bottom:20px;
+font-size:24px;
+}
+
+.issue-form label{
+display:block;
+margin-bottom:5px;
+font-size:14px;
+font-weight:600;
+}
+
+.issue-form input,
+.issue-form textarea,
+.issue-form select{
+width:100%;
+padding:10px;
+border:none;
+border-radius:8px;
+margin-bottom:15px;
+font-size:14px;
+}
+
+.issue-form textarea{
+height:70px;
+resize:none;
+}
+
+.issue-form button{
+width:100%;
+padding:12px;
+border:none;
+border-radius:8px;
+background:#3b82f6;
+color:white;
+font-size:15px;
+cursor:pointer;
+font-weight:600;
+}
+
+.issue-form button:hover
+
+/* ======================
+ISSUE LIST PANEL
+====================== */
+
+.ticket-list{
+background:#f8fafc;
+border-radius:15px;
+padding:20px;
+}
+
+.ticket-list h2{
+margin-bottom:15px;
+color:#1f2937;
+}
+
+/* Scroll List */
+.ticket-list{
+max-height:700px;
+overflow-y:auto;
+}
+
+/* ======================
+ISSUE CARD
+====================== */
+
+.ticket-card{
+background:white;
+border-radius:12px;
+padding:15px;
+margin-bottom:15px;
+border-left:5px solid #3b82f6;
+box-shadow:0 3px 10px rgba(0,0,0,.05);
+}
+
+.ticket-card p{
+margin-bottom:8px;
+font-size:14px;
+color:#374151;
+}
+
+.ticket-card strong{
+color:#111827;
+}
+
+/* Status */
+
+.status-badge{
+padding:4px 10px;
+border-radius:20px;
+font-size:12px;
+font-weight:600;
+}
+
+.status-open{
+background:#fee2e2;
+color:#dc2626;
+}
+
+.status-in-progress{
+background:#fef3c7;
+color:#d97706;
+}
+
+.status-resolved{
+background:#dcfce7;
+color:#16a34a;
+}
+
+/* ======================
+BUTTONS
+====================== */
+
+.ticket-buttons{
+display:flex;
+gap:8px;
+margin-top:15px;
+}
+
+.ticket-buttons button{
+flex:1;
+border:none;
+border-radius:6px;
+padding:8px;
+cursor:pointer;
+color:white;
+font-size:13px;
+}
+
+.ticket-buttons button:first-child
+
+.ticket-buttons button:nth-child(2){
+background:#22c55e;
+}
+
+.delete-btn{
+background:#ef4444 !important;
+}
+
+/* ======================
+MOBILE
+====================== */
+
+@media(max-width:1200px){
+
+.App{
+width:95%;
+}
+
+.main-layout{
+grid-template-columns:1fr;
+}
+
 }
